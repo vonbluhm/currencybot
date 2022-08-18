@@ -1,7 +1,9 @@
 import json
+import os
 import requests
 
 from config import keys
+from dotenv import load_dotenv
 
 
 class APIException(Exception):
@@ -39,8 +41,10 @@ class Converter:
         url = f'https://api.apilayer.com/exchangerates_data/convert' \
               f'?to={base_ticker}&from={quote_ticker}&amount={amount}'
         payload = {}
+        load_dotenv()
+
         headers = {
-            "apikey": "zvBEZPUQGFwrtslhWEdME6VZHZSLl2zE"
+            "apikey": os.getenv('API_KEY')
         }
         response = requests.request("GET", url, headers=headers, data=payload)
         total = json.loads(response.content)['result']

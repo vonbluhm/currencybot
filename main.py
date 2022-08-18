@@ -6,7 +6,7 @@ from extensions import APIException, Converter
 from dotenv import load_dotenv
 import os
 
-load_dotenv('.env')
+load_dotenv()
 TOKEN = os.getenv('TOKEN')
 bot = telebot.TeleBot(TOKEN)
 
