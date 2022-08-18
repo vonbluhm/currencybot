@@ -1,4 +1,3 @@
-TOKEN = "5358485172:AAEXcrkcJgQPhg1H2xUuNYiZ8C778mPcJQg"
 keys = {
     "доллар": {
         "ticker": "USD",

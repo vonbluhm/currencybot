@@ -1,8 +1,13 @@
 import telebot
 
-from config import keys, TOKEN
+from config import keys
 from extensions import APIException, Converter
 
+from dotenv import load_dotenv
+import os
+
+load_dotenv('.env')
+TOKEN = os.getenv('TOKEN')
 bot = telebot.TeleBot(TOKEN)
 
 
